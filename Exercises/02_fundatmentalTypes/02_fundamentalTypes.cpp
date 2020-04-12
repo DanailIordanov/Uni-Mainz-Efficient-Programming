@@ -2,24 +2,28 @@
 
 using namespace std;
 
-long long binomialCoefficient(int n, int k) {
+int binomialCoefficient(int n, int k) 
+{
 	long long nFactorial, kFactorial, nMinusKFactorial;
 
 	nFactorial = 1;
 
-	for (int i = 1; i <= n; i++) {
+	for (int i = 1; i <= n; i++) 
+	{
 		nFactorial *= i;
 	}
 
 	kFactorial = 1;
 
-	for (int i = 1; i <= k; i++) {
+	for (int i = 1; i <= k; i++) 
+	{
 		kFactorial *= i;
 	}
 	 
 	nMinusKFactorial = 1;
 
-	for (int i = 1; i <= n - k; i++) {
+	for (int i = 1; i <= n - k; i++) 
+	{
 		nMinusKFactorial *= i;
 	}
 
@@ -28,11 +32,13 @@ long long binomialCoefficient(int n, int k) {
 	return result;
 }
 
-int binomialCoefficientRec(int n, int k) {
+int binomialCoefficientRec(int n, int k) 
+{
 	return k == 0 || k == n ? 1 : binomialCoefficientRec(n, k - 1) * (n - k + 1) / k;
 }
 
-int main() {
+int main() 
+{
 	cout << "On your system:" << endl;
 	cout << "Char is: " << sizeof(char) << " byte" << endl; // 1 byte on both x32 and x64 target system
 
@@ -67,7 +73,8 @@ int main() {
 	char answer;
 	cin >> answer;
 
-	if (answer == 'n') {
+	if (answer == 'n') 
+	{
 		cout << "Please enter a value for N: ";
 		cin >> n;
 
@@ -75,13 +82,16 @@ int main() {
 		cin >> k;
 
 		cout << "Binomial Coefficient: " << binomialCoefficient(n, k) << endl;
+		return EXIT_SUCCESS;
 	}
-	else if (answer == 'y') {
+	else if (answer == 'y') 
+	{
 		cout << "Binomial Coefficient: " << binomialCoefficient(n, k) << endl;
+		return EXIT_SUCCESS;
 	}
-	else {
+	else 
+	{
 		cout << "Wrong input...";
+		return EXIT_FAILURE;
 	}
-
-
 }

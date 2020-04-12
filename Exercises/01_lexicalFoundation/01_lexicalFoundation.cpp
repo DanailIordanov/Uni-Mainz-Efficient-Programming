@@ -42,4 +42,6 @@ and a\nnew line";
 
     char hashtag = 35;
     cout << hashtag; // #
+
+    return EXIT_SUCCESS;
 }
